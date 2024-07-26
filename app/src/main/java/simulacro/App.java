@@ -5,7 +5,16 @@ package simulacro;
 
 public class App {
     public static void main(String[] args) {
-
+try {
+            System.out.println(Convertir_min_sec(300));
+            System.out.println(Validar_iguales((short)30, (short)20));
+            System.out.println(Calcular_potencia((short)50, (byte)35));
+            
+        } 
+        
+        catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 
 
@@ -14,7 +23,19 @@ public class App {
      * y devuelve en entero, los segundos equivalentes. Si hay un error, devuelve -1. 
      *  Adaptado de edabit
      */
-    
+    public static int Convertir_min_sec (int minutos){
+        try {
+            int total_segundos = 0;
+            total_segundos = 0;
+            final byte segx_min = 60;
+            total_segundos = minutos * segx_min;
+            return total_segundos;
+        }
+
+        catch (Exception e) {
+            return -1;
+        }
+    }
 
 
      /*
@@ -22,7 +43,21 @@ public class App {
      * y devuelve un booleano true si son iguales, false si no lo son. Si hay un error, devuelve false también.
      *  Adaptado de edabit
      */
+public static boolean Validar_iguales (short numero1, short numero2){
+        try{
+            boolean son_iguales = false;
+            if(numero1==numero2)
+               son_iguales = true;
+            else
+               son_iguales = false;
 
+            return son_iguales;
+        }
+        catch (Exception e) {
+            return false;
+        }   
+    }
+    
 
 
     /*
@@ -31,7 +66,16 @@ public class App {
      * Si hay un error, devuelve 0.
      *  Adaptado de edabit
      */
-
+public static float Calcular_potencia (short voltaje, byte corriente){
+        try {
+            float potencia = 0;
+            potencia = voltaje * corriente;
+            return potencia;
+        } 
+        catch (Exception e) {
+            return 0;
+        }
+    }
 
 
 }
